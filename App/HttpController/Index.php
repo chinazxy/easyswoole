@@ -19,4 +19,9 @@ class Index extends Controller
         $this->response()->write('hello laozaoyin');
     }
 
+    function test()
+    {
+        $this->response()->write('this is test');
+    }
+
 }
