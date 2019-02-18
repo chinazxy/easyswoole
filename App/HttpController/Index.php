@@ -40,7 +40,8 @@ class Index extends Controller
     function test()
     {
         $this->writeJson(Status::CODE_OK , ['a' => 111]);
-        $this->response()->write('this is test');
+        $this->response()->withHeader('Content-type', 'text/html;charset=utf-8');
+        $this->response()->write('this is 测试');
     }
 
 }
