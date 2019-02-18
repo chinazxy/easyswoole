@@ -9,6 +9,7 @@
 namespace App\HttpController;
 
 
+use EasySwoole\EasySwoole\Swoole\Task\TaskManager;
 use EasySwoole\Http\AbstractInterface\Controller;
 use EasySwoole\Http\Message\Status;
 
@@ -39,8 +40,9 @@ class Index extends Controller
 
     function test()
     {
-        $this->writeJson(Status::CODE_OK , ['a' => 111]);
-        $this->response()->getBody()->truncate();
+        TaskManager::async(function (){
+            var_dump(11);
+        });
         $this->response()->withHeader('Content-type', 'text/html;charset=utf-8');
         $this->response()->write('this is 测试');
     }
