@@ -9,6 +9,7 @@
 namespace App\HttpController;
 
 
+use App\Task\TaskRunner;
 use EasySwoole\EasySwoole\Swoole\Task\TaskManager;
 use EasySwoole\Http\AbstractInterface\Controller;
 use EasySwoole\Http\Message\Status;
@@ -22,12 +23,7 @@ class Index extends Controller
 
     function index()
     {
-        TaskManager::async(function () {
-            echo "执行异步任务...\n";
-            return true;
-        }, function () {
-            echo "异步任务执行完毕...\n";
-        });
+        TaskManager::async(TaskRunner::class);
     }
 
     function test()
