@@ -39,7 +39,7 @@ class Index extends Controller
 
     function test()
     {
-        new AAAA();
+        $this->writeJson(Status::CODE_OK , ['a' => 111]);
         $this->response()->write('this is test');
     }
 
