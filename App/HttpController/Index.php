@@ -16,7 +16,8 @@ class Index extends Controller
 {
     protected function onRequest(string $action): ?bool
     {
-        header("Content-type: text/html; charset=utf-8");
+        $this->response()->withHeader('Content-Type','text/html');
+        $this->response()->withHeader('charset','utf-8');
         $token = $this->request()->getQueryParam('token');
         if ($token != '111') {
             $this->response()->withStatus(Status::CODE_UNAUTHORIZED);
