@@ -24,6 +24,7 @@ class Index extends Controller
     function index()
     {
         TaskManager::async(TaskRunner::class);
+        $this->response()->write('1');
     }
 
     function test()
