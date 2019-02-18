@@ -29,7 +29,8 @@ class Index extends Controller
     function test()
     {
         TaskManager::async(function (){
-            var_dump(11);
+            sleep(1);
+            var_dump(time());
         });
         $this->response()->withHeader('Content-type', 'text/html;charset=utf-8');
         $this->response()->write('this is 测试');
