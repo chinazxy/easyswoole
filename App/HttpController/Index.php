@@ -27,7 +27,6 @@ class Index extends Controller
 
         TaskManager::async(function () {
             echo "执行异步任务...\n";
-            return true;
         }, function () {
             echo "异步任务执行完毕...\n";
         });
