@@ -28,6 +28,12 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         //Crontab::getInstance()->addTask();
+        \EasySwoole\EasySwoole\Swoole\Task\TaskManager::async(function () {
+            echo "执行异步任务...\n";
+            return true;
+        }, function () {
+            echo "异步任务执行完毕...\n";
+        });
     }
 
     public static function onRequest(Request $request, Response $response): bool
