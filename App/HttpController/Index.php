@@ -25,6 +25,7 @@ class Index extends Controller
         TaskManager::async(function (){
             sleep(1);
             var_dump(time());
+            return true;
         });
     }
 
