@@ -18,6 +18,7 @@ class TaskRunner extends AbstractAsyncTask
     {
         $ser = ServerManager::getInstance();
         var_dump('this is taskrunner');
+        return true;
     }
 
     protected function finish($result, $task_id)
