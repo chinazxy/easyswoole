@@ -39,6 +39,7 @@ class Index extends Controller
 
     function test()
     {
+        new AAAA();
         $this->response()->write('this is test');
     }
 
