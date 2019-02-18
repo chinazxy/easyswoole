@@ -22,7 +22,7 @@ class Index extends Controller
 
     function index()
     {
-        \EasySwoole\EasySwoole\Swoole\Task\TaskManager::async(function () {
+        TaskManager::async(function () {
             echo "执行异步任务...\n";
             return true;
         }, function () {
