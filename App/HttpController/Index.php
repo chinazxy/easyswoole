@@ -22,16 +22,14 @@ class Index extends Controller
 
     function index()
     {
-        // TODO: Implement index() method.
-        $this->response()->write('hello laozaoyin');
-    }
-
-    function test()
-    {
         TaskManager::async(function (){
             sleep(1);
             var_dump(time());
         });
+    }
+
+    function test()
+    {
         $this->response()->withHeader('Content-type', 'text/html;charset=utf-8');
         $this->response()->write('this is 测试');
     }
