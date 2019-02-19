@@ -23,7 +23,7 @@ class Index extends Controller
 
     function index()
     {
-
+        $this->response()->write("task");
         TaskManager::async(new TaskRunner());
 
         TaskManager::async(function () {
@@ -32,6 +32,10 @@ class Index extends Controller
         }, function () {
             echo "异步任务执行完毕...\n";
         });
+
+        $result = TaskManager::async(new TaskTest());
+        $result = TaskManager::async(QuickTaskTest::class);
+        var_dump($result);
     }
 
     function test()
