@@ -8,7 +8,7 @@
 
 namespace App\Task;
 use EasySwoole\EasySwoole\Swoole\Task\AbstractAsyncTask;
-class TaskTest extends AbstractAsyncTask
+class TaskRunner extends AbstractAsyncTask
 {
     protected function run($taskData,$taskId,$fromWorkerId,$flags = null)
     {

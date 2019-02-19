@@ -23,7 +23,8 @@ class Index extends Controller
 
     function index()
     {
-        TaskManager::async(TaskRunner::class);
+
+        TaskManager::async(new TaskRunner());
 
         TaskManager::async(function () {
             echo "执行异步任务...\n";
