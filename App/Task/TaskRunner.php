@@ -7,22 +7,18 @@
  */
 
 namespace App\Task;
-
-
-use EasySwoole\EasySwoole\ServerManager;
 use EasySwoole\EasySwoole\Swoole\Task\AbstractAsyncTask;
-
-class TaskRunner extends AbstractAsyncTask
+class TaskTest extends AbstractAsyncTask
 {
-    function run($taskData, $taskId, $fromWorkerId, $flags = null)
+    protected function run($taskData,$taskId,$fromWorkerId,$flags = null)
     {
-        var_dump(1111);
+        echo "执行task模板任务\n";
+        // TODO: Implement run() method.
     }
-
     function finish($result, $task_id)
     {
-        var_dump('taskrunner done');
+        echo "task模板任务完成\n";
+        return 1;
+        // TODO: Implement finish() method.
     }
-
-
 }
