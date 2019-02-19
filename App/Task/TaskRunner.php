@@ -14,14 +14,12 @@ use EasySwoole\EasySwoole\Swoole\Task\AbstractAsyncTask;
 
 class TaskRunner extends AbstractAsyncTask
 {
-    protected function run($taskData, $taskId, $fromWorkerId, $flags = null)
+    function run($taskData, $taskId, $fromWorkerId, $flags = null)
     {
-        $ser = ServerManager::getInstance();
-        var_dump('this is taskrunner');
-        return true;
+        var_dump(1111);
     }
 
-    protected function finish($result, $task_id)
+    function finish($result, $task_id)
     {
         var_dump('taskrunner done');
     }
