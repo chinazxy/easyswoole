@@ -9,7 +9,7 @@
 namespace App\Task;
 
 
-class QuickTaskTest extends Quick
+class QuickTaskTest
 {
 
 }

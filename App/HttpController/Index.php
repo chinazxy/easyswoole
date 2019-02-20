@@ -24,7 +24,7 @@ class Index extends Controller
     function index()
     {
         $this->response()->write("task");
-        TaskManager::async(new TaskRunner());
+        $result = TaskManager::async(new TaskRunner());
 
         TaskManager::async(function () {
             echo "执行异步任务...\n";
@@ -33,8 +33,6 @@ class Index extends Controller
             echo "异步任务执行完毕...\n";
         });
 
-        $result = TaskManager::async(new TaskTest());
-        $result = TaskManager::async(QuickTaskTest::class);
         var_dump($result);
     }
 
@@ -43,5 +41,6 @@ class Index extends Controller
         $this->response()->withHeader('Content-type', 'text/html;charset=utf-8');
         $this->response()->write('this is 测试');
     }
+
 
 }
