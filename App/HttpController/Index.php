@@ -24,7 +24,7 @@ class Index extends Controller
     function index()
     {
         $this->response()->write("task");
-        $result = TaskManager::async(new TaskRunner());
+        $result = TaskManager::async(TaskRunner::class);
 
         TaskManager::async(function () {
             echo "执行异步任务...\n";

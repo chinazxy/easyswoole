@@ -15,6 +15,7 @@ class TaskRunner extends AbstractAsyncTask
     {
         var_dump($taskData,$taskId,$fromWorkerId);
         echo "执行task模板任务\n";
+        //必须返回true才能执行finish
         return true;
         // TODO: Implement run() method.
     }
