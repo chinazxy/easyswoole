@@ -29,9 +29,12 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         $register->add($register::onWorkerStart , function ($ser , $work_id){
-            Timer::getInstance()->loop(1000 , function (){
-                var_dump(time());
-            });
+            if ($work_id == 0) {
+                Timer::getInstance()->loop(1000 , function (){
+                    var_dump(time());
+                });
+            }
+
         });
     }
 
