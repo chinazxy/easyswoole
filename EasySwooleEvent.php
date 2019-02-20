@@ -9,6 +9,7 @@
 namespace EasySwoole\EasySwoole;
 
 
+use EasySwoole\Component\Timer;
 use EasySwoole\EasySwoole\Crontab\Crontab;
 use EasySwoole\EasySwoole\Swoole\EventRegister;
 use EasySwoole\EasySwoole\AbstractInterface\Event;
@@ -28,7 +29,9 @@ class EasySwooleEvent implements Event
     {
         // TODO: Implement mainServerCreate() method.
         $register->add($register::onWorkerStart , function ($ser , $work_id){
-            var_dump($work_id);
+            Timer::getInstance()->loop(1000 , function (){
+                var_dump(time());
+            });
         });
     }
 
