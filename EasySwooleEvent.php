@@ -27,7 +27,9 @@ class EasySwooleEvent implements Event
     public static function mainServerCreate(EventRegister $register)
     {
         // TODO: Implement mainServerCreate() method.
-        //Crontab::getInstance()->addTask();
+        $register->add($register::onWorkerStart , function ($ser , $work_id){
+            var_dump($work_id);
+        });
     }
 
     public static function onRequest(Request $request, Response $response): bool
