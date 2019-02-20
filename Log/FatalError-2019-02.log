@@ -1,0 +1,7 @@
+[2019-02-18 11:25:01][FatalError][file:/home/wwwroot/easyswoole/vendor/easyswoole/easyswoole/src/Crontab/Crontab.php][line:28]Uncaught ArgumentCountError: Too few arguments to function EasySwoole\EasySwoole\Crontab\Crontab::addTask(), 0 passed in /home/wwwroot/easyswoole/EasySwooleEvent.php on line 30 and exactly 1 expected in /home/wwwroot/easyswoole/vendor/easyswoole/easyswoole/src/Crontab/Crontab.php:28
+Stack trace:
+#0 /home/wwwroot/easyswoole/EasySwooleEvent.php(30): EasySwoole\EasySwoole\Crontab\Crontab->addTask()
+#1 /home/wwwroot/easyswoole/vendor/easyswoole/easyswoole/src/Core.php(119): EasySwoole\EasySwoole\EasySwooleEvent::mainServerCreate(Object(EasySwoole\EasySwoole\Swoole\EventRegister))
+#2 /home/wwwroot/easyswoole/vendor/easyswoole/easyswoole/src/Command/DefaultCommand/Start.php(42): EasySwoole\EasySwoole\Core->createServer()
+#3 /home/wwwroot/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandContainer.php(44): EasySwoole\EasySwoole\Command\DefaultCommand\Start->exec(Array)
+#4 /home/wwwroot/easyswoole/vendor/easyswoole/easyswoole/src/Command/CommandRunner.php(50): EasySwoole\EasySwoole\Command\CommandContainer->
